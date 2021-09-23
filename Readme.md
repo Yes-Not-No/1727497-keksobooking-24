@@ -1,7 +1,7 @@
 # Личный проект «Кексобукинг»
 
 * Студент: [Pasha Khokhlov](https://up.htmlacademy.ru/javascript/24/user/1727497).
-* Наставник: `Неизвестно`.
+* Наставник: [Михаил Кислый] (https://htmlacademy.ru/profile/smart-grizzly).
 
 ---
 
