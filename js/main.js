@@ -1,3 +1,3 @@
-import {createObjectsSimilarAdsMassive} from './create-objects-massive.js';
+import {createObjectsSimilarAdsArray} from './create-objects-array.js';
 
-console.log(createObjectsSimilarAdsMassive());
+console.log(createObjectsSimilarAdsArray());
