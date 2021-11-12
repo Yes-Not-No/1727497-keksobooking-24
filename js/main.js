@@ -1,1 +1,2 @@
-import {createObjectsSimilarAdsArray} from './create-objects-array.js';
+import './data.js';
+import './cards.js';
