@@ -1,4 +1,4 @@
-import {getRandomInteger, getRandomFractional} from './random-generator.js';
+import {getRandomInteger, getRandomFractional} from './generator.js';
 
 const TYPE = ['palace', 'flat', 'house', 'bungalow', 'hotel'];
 const TIME = ['12:00', '13:00', '14:00'];
@@ -48,7 +48,7 @@ function createObjectSimilarAds(avatarId, price, type, rooms, guests, checkin, c
 
   const similarAd = {
     author: {
-      avatar: `img/avatars/user${avatarId}.png`,
+      avatar: `img/avatars/user0${avatarId}.png`,
     },
     offer: {
       title: 'Вам подойдет',
@@ -75,10 +75,10 @@ function createObjectSimilarAds(avatarId, price, type, rooms, guests, checkin, c
 function createObjectsSimilarAdsArray() {
   const ads = [];
 
-  for(let it = 0; it < 10; it++){
+  for(let i = 0; i < 10; i++){
     ads.push(
       createObjectSimilarAds(
-        getRandomInteger(1, 10),
+        getRandomInteger(1, 9),
         getRandomInteger(1000000, 10000000),
         TYPE[getRandomInteger(0, 4)],
         getRandomInteger(1, 5),
@@ -96,4 +96,6 @@ function createObjectsSimilarAdsArray() {
   return ads;
 }
 
-export {TYPE, TIME, FEATURES, PHOTOS_URL, LAT_MIN, LAT_MAX, LNG_MIN, LNG_MAX, LAT_LNG_LENGTH, setFeatures, setPhotos, createObjectSimilarAds, createObjectsSimilarAdsArray};
+const similarAdsArray = createObjectsSimilarAdsArray();
+
+export {TYPE, TIME, FEATURES, PHOTOS_URL, LAT_MIN, LAT_MAX, LNG_MIN, LNG_MAX, LAT_LNG_LENGTH, setFeatures, setPhotos, createObjectSimilarAds, createObjectsSimilarAdsArray, similarAdsArray};
