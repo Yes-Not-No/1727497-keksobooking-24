@@ -1,3 +1,12 @@
+const TITLE_MIN_LENGTH = 30;
+const TITLE_MAX_LENGTH = 100;
+const MAX_PRICE = 1000000;
+const BUNGALOW_MIN_PRICE = 0;
+const FLAT_MIN_PRICE = 1000;
+const HOTEL_MIN_PRICE = 3000;
+const HOUSE_MIN_PRICE = 5000;
+const PALACE_MIN_PRICE = 10000;
+
 const adForm = document.querySelector('.ad-form');
 const filterForm = document.querySelector('.map__filters');
 const formTitle = adForm.querySelector('#title');
@@ -7,26 +16,22 @@ const roomNumbersInput = adForm.querySelector('#room_number');
 const guestsNumbersInput = adForm.querySelector('#capacity');
 let minPrice;
 
-const TITLE_MIN_LENGTH = 30;
-const TITLE_MAX_LENGTH = 100;
-const MAX_PRICE = 1000000;
-
 const setMinPrice = function () {
   switch (formType.value) {
-    case 'bungalow': formPrice.setAttribute('min', '0');
-      minPrice = 0;
+    case 'bungalow': formPrice.setAttribute('min', BUNGALOW_MIN_PRICE);
+      minPrice = BUNGALOW_MIN_PRICE;
       break;
-    case 'flat': formPrice.setAttribute('min', '1000');
-      minPrice = 1000;
+    case 'flat': formPrice.setAttribute('min', FLAT_MIN_PRICE);
+      minPrice = FLAT_MIN_PRICE;
       break;
-    case 'hotel': formPrice.setAttribute('min', '3000');
-      minPrice = 3000;
+    case 'hotel': formPrice.setAttribute('min', HOTEL_MIN_PRICE);
+      minPrice = HOTEL_MIN_PRICE;
       break;
-    case 'house': formPrice.setAttribute('min', '5000');
-      minPrice = 5000;
+    case 'house': formPrice.setAttribute('min', HOUSE_MIN_PRICE);
+      minPrice = HOUSE_MIN_PRICE;
       break;
-    case 'palace': formPrice.setAttribute('min', '10000');
-      minPrice = 10000;
+    case 'palace': formPrice.setAttribute('min', PALACE_MIN_PRICE);
+      minPrice = PALACE_MIN_PRICE;
   }
 };
 
