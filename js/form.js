@@ -14,6 +14,7 @@ const formPrice = adForm.querySelector('#price');
 const formType = adForm.querySelector('#type');
 const roomNumbersInput = adForm.querySelector('#room_number');
 const guestsNumbersInput = adForm.querySelector('#capacity');
+const addressInput = adForm.querySelector('#address');
 let minPrice;
 
 const setMinPrice = function () {
@@ -55,8 +56,6 @@ function activateForm(formName, disabledClassName) {
 
 inactivateForm(adForm, 'ad-form--disabled');
 inactivateForm(filterForm, 'map__filters--disabled');
-activateForm(adForm, 'ad-form--disabled');
-activateForm(filterForm, 'map__filters--disabled');
 
 formTitle.addEventListener('input', () => {
   const titleLength = formTitle.value.length;
@@ -116,3 +115,5 @@ guestsNumbersInput.addEventListener('input', () => {
 
   guestsNumbersInput.reportValidity();
 });
+
+export { activateForm, adForm, filterForm, addressInput };

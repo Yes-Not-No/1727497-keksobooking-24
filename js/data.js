@@ -1,4 +1,4 @@
-import {getRandomInteger, getRandomFractional} from './generator.js';
+import { getRandomInteger, getRandomFractional } from './generator.js';
 
 const TYPE = ['palace', 'flat', 'house', 'bungalow', 'hotel'];
 const TIME = ['12:00', '13:00', '14:00'];
@@ -14,12 +14,12 @@ const LNG_MIN = 139.70000;
 const LNG_MAX = 139.80000;
 const LAT_LNG_LENGTH = 5;
 
-function setFeatures(featutesList){
+function setFeatures(featutesList) {
   const features = [];
   features.push(featutesList[getRandomInteger(0, 5)]);
-  for(let it = 0; it < 6; it++) {
+  for (let it = 0; it < 6; it++) {
     const randomDigit = getRandomInteger(0, 5);
-    if(features.includes(featutesList[randomDigit])){
+    if (features.includes(featutesList[randomDigit])) {
       continue;
     } else {
       features.push(featutesList[randomDigit]);
@@ -28,12 +28,12 @@ function setFeatures(featutesList){
   return features;
 }
 
-function setPhotos(photosList){
+function setPhotos(photosList) {
   const photos = [];
   photos.push(photosList[getRandomInteger(0, 2)]);
-  for(let it = 0; it < 3; it++) {
+  for (let it = 0; it < 3; it++) {
     const randomDigit = getRandomInteger(0, 2);
-    if(photos.includes(photosList[randomDigit])){
+    if (photos.includes(photosList[randomDigit])) {
       continue;
     } else {
       photos.push(photosList[randomDigit]);
@@ -75,7 +75,7 @@ function createObjectSimilarAds(avatarId, price, type, rooms, guests, checkin, c
 function createObjectsSimilarAdsArray() {
   const ads = [];
 
-  for(let i = 0; i < 10; i++){
+  for (let i = 0; i < 10; i++) {
     ads.push(
       createObjectSimilarAds(
         getRandomInteger(1, 9),
@@ -98,4 +98,4 @@ function createObjectsSimilarAdsArray() {
 
 const similarAdsArray = createObjectsSimilarAdsArray();
 
-export {TYPE, TIME, FEATURES, PHOTOS_URL, LAT_MIN, LAT_MAX, LNG_MIN, LNG_MAX, LAT_LNG_LENGTH, setFeatures, setPhotos, createObjectSimilarAds, createObjectsSimilarAdsArray, similarAdsArray};
+export { TYPE, TIME, FEATURES, PHOTOS_URL, LAT_MIN, LAT_MAX, LNG_MIN, LNG_MAX, LAT_LNG_LENGTH, setFeatures, setPhotos, createObjectSimilarAds, createObjectsSimilarAdsArray, similarAdsArray };

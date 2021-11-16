@@ -1,10 +1,7 @@
-import { similarAdsArray } from './data.js';
-
 const templateCard = document.querySelector('#card')
   .content
   .querySelector('article');
-const canvas = document.querySelector('#map-canvas');
-const fragment = document.createDocumentFragment();
+
 const apartment = {
   palace: 'Дворец',
   flat: 'Квартира',
@@ -13,7 +10,7 @@ const apartment = {
   hotel: 'Отель',
 };
 
-similarAdsArray.map((element) => {
+function drowCard(element) {
   const card = templateCard.cloneNode(true);
   const cardTitle = card.querySelector('.popup__title');
   const cardAddress = card.querySelector('.popup__text--address');
@@ -101,7 +98,7 @@ similarAdsArray.map((element) => {
     cardAvatar.setAttribute('style', 'display: none;');
   }
 
-  fragment.appendChild(card);
-});
+  return card;
+}
 
-canvas.appendChild(fragment);
+export { templateCard, apartment, drowCard };
