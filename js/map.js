@@ -54,7 +54,7 @@ const point = L.marker(
 
 point.addTo(map);
 
-similarAdsArray.forEach((ad) => {
+function createPoints(data) {
   const pointIconSimilar = L.icon({
     iconUrl: '/leaflet/images/marker-icon.png',
     iconSize: [40, 40],
@@ -66,8 +66,8 @@ similarAdsArray.forEach((ad) => {
 
   const pointSimilar = L.marker(
     {
-      lat: ad.location.lat,
-      lng: ad.location.lng,
+      lat: data.location.lat,
+      lng: data.location.lng,
     },
     {
       draggable: false,
@@ -75,5 +75,9 @@ similarAdsArray.forEach((ad) => {
     },
   );
   pointSimilar.addTo(map);
-  pointSimilar.bindPopup(drowCard(ad));
+  pointSimilar.bindPopup(drowCard(data));
+}
+
+similarAdsArray.forEach((ad) => {
+  createPoints(ad);
 });
